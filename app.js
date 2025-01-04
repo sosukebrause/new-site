@@ -28,4 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
       feature.style.backgroundColor = "";
     });
   });
+
+  // Video section interactivity
+  const videoContainer = document.querySelector(".video-container iframe");
+  videoContainer.addEventListener("mouseover", () => {
+    videoContainer.style.transform = "scale(1.05)";
+    videoContainer.style.transition = "transform 0.3s";
+  });
+  videoContainer.addEventListener("mouseout", () => {
+    videoContainer.style.transform = "scale(1)";
+  });
 });
