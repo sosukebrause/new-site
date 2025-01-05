@@ -38,4 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
   videoContainer.addEventListener("mouseout", () => {
     videoContainer.style.transform = "scale(1)";
   });
+
+  // Ensure video autoplay works on supported devices
+  const videoIframe = document.querySelector(".video-container iframe");
+  const autoplaySrc = videoIframe.src;
+
+  if (!autoplaySrc.includes("autoplay=1")) {
+    videoIframe.src = autoplaySrc.includes("?")
+      ? `${autoplaySrc}&autoplay=1`
+      : `${autoplaySrc}?autoplay=1`;
+  }
 });
