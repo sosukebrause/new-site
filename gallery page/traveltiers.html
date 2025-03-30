@@ -35,13 +35,34 @@
         width: 30%;
         min-width: 250px;
         margin: 10px;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+      }
+      .tier img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .tier img.active {
+        opacity: 1;
       }
       .tier h2 {
         color: #d81b60;
+        margin-top: 160px;
       }
       .tier p {
         font-size: 14px;
         color: #555;
+      }
+      .tier .extra-info {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
       }
       .tier .price {
         font-size: 18px;
@@ -61,6 +82,33 @@
       .tier button:hover {
         background-color: #b7154d;
       }
+      .tier:hover {
+        transform: scale(1.1);
+      }
+      .tier:hover .extra-info {
+        opacity: 1;
+      }
+      .tier:nth-child(4) {
+        margin-top: 30px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #d81b60;
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -69,33 +117,82 @@
       <p>Choose the perfect experience for your journey in Japan.</p>
       <div class="tiers">
         <div class="tier">
+          <img src="image0a.jpg" class="active" />
+          <img src="image0b.jpg" />
+          <img src="image0c.jpg" />
+          <h2>Free Consultation</h2>
+          <p>General tips and basic guidance on planning your trip to Japan.</p>
+          <p class="extra-info">Get started with expert insights at no cost.</p>
+          <p class="price">Free</p>
+          <button>Learn More</button>
+        </div>
+        <div class="tier">
+          <img src="image1a.jpg" class="active" />
+          <img src="image1b.jpg" />
+          <img src="image1c.jpg" />
           <h2>Essential Consultation</h2>
           <p>
             Personalized itinerary planning with expert advice, including
             must-visit locations and cultural insights.
           </p>
+          <p class="extra-info">
+            Get customized advice to make your trip unforgettable.
+          </p>
           <p class="price">$199</p>
           <button>Learn More</button>
         </div>
         <div class="tier">
+          <img src="image2a.jpg" class="active" />
+          <img src="image2b.jpg" />
+          <img src="image2c.jpg" />
           <h2>Guided Exploration</h2>
           <p>
             Includes itinerary planning plus on-ground assistance with local
             guides and curated experiences.
           </p>
+          <p class="extra-info">Discover Japan with experts by your side.</p>
           <p class="price">$899</p>
           <button>Learn More</button>
         </div>
         <div class="tier">
+          <img src="image3a.jpg" class="active" />
+          <img src="image3b.jpg" />
+          <img src="image3c.jpg" />
           <h2>Luxury Private Tour</h2>
           <p>
             All-inclusive private tours with exclusive accommodations, fine
             dining, and premium cultural experiences.
           </p>
+          <p class="extra-info">
+            Indulge in a once-in-a-lifetime luxury journey.
+          </p>
           <p class="price">$3,499</p>
           <button>Learn More</button>
         </div>
       </div>
+      <table>
+        <tr>
+          <th>Service Pack</th>
+          <th>Basic</th>
+          <th>Standard</th>
+          <th>Custom</th>
+          <th>Pro</th>
+        </tr>
+        <tr>
+          <td>Personalized Itinerary</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>On-Ground Assistance</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
